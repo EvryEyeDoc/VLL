@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--MAP EBIM-->
+<eyedoc version="1.0">
+  <transform>
+    <global>
+      <source>
+        <xpath type="root">*/form/fieldcode</xpath>
+        <xpath type="format">field[@name='{0}']/@data</xpath>
+      </source>
+      <target>
+        <xpath type="root">blankett</xpath>
+      </target>
+    </global>
+    <rows>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_personnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/personnr</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_namn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/namn/knamn</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_adress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='H']/adresstypED1[@typ='STR']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='H']/adresstypED1[@typ='PNR']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postadress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='H']/adresstypED1[@typ='PAD']/del</item>
+        </target>
+      </row>
+
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_avd</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/avdelning</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">datum</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/personalED1[@typ='Ansvarig']/underskrift/datum</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_vdgnamn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/personalED1[@typ='Ansvarig']/namn/knamn</item>
+        </target>
+      </row>
+
+    </rows>
+  </transform>
+</eyedoc>

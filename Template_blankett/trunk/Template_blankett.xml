@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<blankett xmlns="https://www.eyedoc.se/schemas/form/template_blankett">
+  <!--*****    EyeDoc DataTyper v1.0.1 - 2010-07-20 EB     *****-->
+  <patientED1>
+    <personnr />
+    <namn>
+      <fnamn />
+      <mnamn />
+      <tnamn />
+      <enamn />
+      <knamn />
+    </namn>
+    <adressED1 typ="H">
+      <adresstypED1 typ="HNR">
+        <del />
+      </adresstypED1>
+      <gilttid>
+        <fram />
+        <tillm />
+      </gilttid>
+    </adressED1>
+    <telefonED1 typ="Hem">
+      <nummer />
+    </telefonED1>
+    <tolkbehovED1 typ="Standard">
+      <behov />
+      <bestalld />
+      <sprak />
+      <tolksatt />
+      <registreringsdatum />
+    </tolkbehovED1>
+    <narstaendeED1 typ="Standard">
+      <personnr />
+      <namn>
+        <fnamn />
+        <mnamn />
+        <tnamn />
+        <enamn />
+        <knamn />
+      </namn>
+      <telefonED1 typ="Hem">
+        <nummer />
+      </telefonED1>
+      <adressED1 typ="H">
+        <adresstypED1>
+          <del />
+        </adresstypED1>
+        <gilttid>
+          <fram />
+          <tillm />
+        </gilttid>
+      </adressED1>
+      <relation />
+      <underskrift>
+        <ort />
+        <datum />
+      </underskrift>
+    </narstaendeED1>
+    <foretradareED1 typ="Standard">
+      <personnr />
+      <relation />
+      <namn>
+        <fnamn />
+        <mnamn />
+        <tnamn />
+        <enamn />
+        <knamn />
+      </namn>
+      <telefonED1 typ="PG">
+        <nummer />
+      </telefonED1>
+      <adressED1 typ="H">
+        <adresstypED1 typ="HNR">
+          <del />
+        </adresstypED1>
+        <gilttid>
+          <fram />
+          <tillm />
+        </gilttid>
+      </adressED1>
+      <underskrift>
+        <ort />
+        <datum />
+      </underskrift>
+    </foretradareED1>
+    <underskrift>
+      <ort />
+      <datum />
+    </underskrift>
+    <kon />
+    <fodelsetidpunkt />
+  </patientED1>
+  <enheterED1>
+    <enhetED1 typ="Ansvarig">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+      <adressED1 typ="WP">
+        <adresstypED1 typ="PAD">
+          <del />
+        </adresstypED1>
+        <gilttid>
+          <fram />
+          <tillm />
+        </gilttid>
+      </adressED1>
+      <telefonED1 typ="Arbete">
+        <nummer />
+      </telefonED1>
+      <personalED1 typ="Ansvarig">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <underskrift>
+          <ort />
+          <datum />
+        </underskrift>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+    </enhetED1>
+  </enheterED1>
+  <formlist>
+    <formgroup>
+      <string50value typ="Varde">
+        <value />
+      </string50value>
+      <string100value>
+        <value />
+      </string100value>
+      <string250value typ="Varde">
+        <value />
+      </string250value>
+      <string500value typ="Varde">
+        <value />
+      </string500value>
+      <string1000value typ="Varde">
+        <value />
+      </string1000value>
+      <stringUnboundValue>
+        <value />
+      </stringUnboundValue>
+      <string4000value typ="Varde">
+        <value />
+      </string4000value>
+      <booleanvalue>
+        <value>0</value>
+      </booleanvalue>
+      <datevalue>
+        <value />
+      </datevalue>
+      <intvalue typ="Varde">
+        <value />
+      </intvalue>
+      <doublevalue typ="Varde">
+        <value />
+      </doublevalue>
+    </formgroup>
+  </formlist>
+  <diagnosED1>
+    <deldiagnosED1 typ="Primar">
+      <diagnoskod />
+      <diagnos />
+      <aktuellt />
+      <titel />
+      <beskrivning />
+      <datum />
+      <patientvetskap />
+    </deldiagnosED1>
+    <anamnesED1 event="Standard">
+      <besoksorsak />
+      <datum />
+      <varde />
+      <aktuellt />
+      <titel />
+      <beskrivning />
+    </anamnesED1>
+    <statusED1 event="EV3">
+      <statusvardeED1 typ="BLV">
+        <varde />
+        <aktuellt />
+        <beskrivning />
+        <titel />
+      </statusvardeED1>
+      <somatisk />
+      <psykisk />
+      <tidpunkt />
+      <datum />
+    </statusED1>
+  </diagnosED1>
+  <lakemedelED1>
+    <lakemedelshandelseED1 typ="Intag" event="EV1">
+      <preparatED1 typ="Standard">
+        <varde />
+        <styrka />
+        <aktuellt />
+        <frm />
+        <tom />
+        <titel />
+        <beskrivning />
+        <preparatformED1 typ="Intubation">
+          <varde />
+          <aktuellt />
+          <titel />
+          <beskrivning />
+        </preparatformED1>
+        <biverkningED1>
+          <aktuellt />
+          <titel />
+          <datum />
+          <beskrivning />
+          <status />
+          <effekt />
+          <insattning />
+          <utsattning />
+        </biverkningED1>
+      </preparatED1>
+      <tidpunkt />
+      <datum />
+      <orsak />
+      <beskrivning />
+    </lakemedelshandelseED1>
+  </lakemedelED1>
+  <kontaktED1>
+    <kontakteventED1 event="Standard">
+      <undersokningED1 typ="GAST">
+        <varde />
+        <aktuellt />
+        <titel />
+        <beskrivning />
+        <tidpunkt />
+        <datum />
+        <status />
+        <prio />
+      </undersokningED1>
+      <behandlingED1 typ="OP">
+        <biverkningED1>
+          <aktuellt />
+          <titel />
+          <datum />
+          <beskrivning />
+          <status />
+          <effekt />
+          <insattning />
+          <utsattning />
+        </biverkningED1>
+        <resultat />
+        <varde />
+        <aktuellt />
+        <titel />
+        <beskrivning />
+        <tidpunkt />
+        <datum />
+        <status />
+        <prio />
+        <behandlingsdataED1>
+          <varde />
+          <aktuellt />
+          <titel />
+          <beskrivning />
+        </behandlingsdataED1>
+      </behandlingED1>
+    </kontakteventED1>
+  </kontaktED1>
+</blankett>

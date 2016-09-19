@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blankett xmlns="http://gainit.se/IBIS/BLANKETT/VLL004">
+  <patientED1>
+    <personnr />
+    <namn>
+      <fnamn />
+      <mnamn />
+      <tnamn />
+      <enamn />
+      <knamn />
+    </namn>
+    <adressED1 typ="H">
+      <adresstypED1 typ="STR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PNR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PAD">
+        <del />
+      </adresstypED1>
+    </adressED1>
+    <telefonED1 typ="Hem">
+      <nummer />
+    </telefonED1>
+    <kon />
+    <fodelsetidpunkt />
+  </patientED1>
+  <enheterED1>
+    <enhetED1 typ="Ansvarig">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+      <telefonED1 typ="Arbete">
+        <nummer />
+      </telefonED1>
+      <personalED1 typ="Ansvarig">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+    </enhetED1>
+    <enhetED1 typ="Behandling">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+    </enhetED1>
+  </enheterED1>
+  <formlist>
+    <formgroup typ="Opererad">
+      <string50value typ="OpereradI">
+        <value />
+      </string50value>
+      <datevalue typ="Datum">
+        <value />
+      </datevalue>
+    </formgroup>
+    <formgroup typ="Sarinfektion">
+      <string50value typ="Ytlig">
+        <value />
+      </string50value>
+      <string50value typ="Djup">
+        <value />
+      </string50value>
+      <booleanvalue typ="Ytlig">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="Djup">
+        <value />
+      </booleanvalue>
+      <datevalue typ="Ytlig">
+        <value />
+      </datevalue>
+      <datevalue typ="Djup">
+        <value />
+      </datevalue>
+    </formgroup>
+    <formgroup typ="Odling">
+      <string250value typ="Odlingssvar">
+        <value />
+      </string250value>
+      <datevalue typ="Odlingsdatum">
+        <value />
+      </datevalue>
+    </formgroup>
+    <formgroup typ="Antibiotika">
+      <string50value typ="Insatt">
+        <value />
+      </string50value>
+      <string100value typ="Vilka">
+        <value />
+      </string100value>
+    </formgroup>
+    <formgroup typ="Datum">
+      <datevalue typ="Datum">
+        <value />
+      </datevalue>
+    </formgroup>
+  </formlist>
+  <diagnosED1 />
+  <lakemedelED1 />
+  <kontaktED1 />
+  <check>
+    <subcheck>
+      <usercheck>
+        <checked />
+        <username />
+        <usercode />
+        <timestamp />
+      </usercheck>
+    </subcheck>
+  </check>
+</blankett>

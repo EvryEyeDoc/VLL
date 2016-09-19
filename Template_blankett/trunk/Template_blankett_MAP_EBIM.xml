@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--MAP EBIM-->
+<eyedoc version="1.0">
+  <transform>
+    <global>
+      <source>
+        <xpath type="root">*/form/fieldcode</xpath>
+        <xpath type="format">field[@name='{0}']/@data</xpath>
+      </source>
+      <target>
+        <xpath type="root">blankett</xpath>
+      </target>
+    </global>
+    <rows>
+      <!--<row>
+        <source>
+          <item action="replace" type="logic" argument="referencenr" arguments="1|&quot;Unikt id {4}-&quot;0000|12345"></item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">formid</item>
+        </target>
+      </row>-->
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">datum</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">ortdatum/datum</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_personnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/personid</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_namn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/namn/knamn</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_adress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/adr/adrdel[@adrradtyp='STR']/adrrad</item>
+        </target>
+      </row>
+
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/adr/postn</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postadress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/adr/adrdel[@adrradtyp='CTY']/adrrad</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_telbostad</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/telc[@telctyp='HT']/telcrad</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_telarb</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patient/telc[@telctyp='WT']/telcrad</item>
+        </target>
+      </row>
+      <!--sjukhusdel-->
+      <!--Personal-->
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_vdgnamn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvpers/namn/knamn</item>
+        </target>
+      </row>
+      <row>
+      <source>
+          <item action="replace" type="xpathformat">ansv_sign</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvpers/sign</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_titelkod</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvpers/titkod</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_titel</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvpers/tit</item>
+        </target>
+      </row>
+      <!--enhet-->
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">Instans_Plats</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/enh</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_avd</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/avd</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_adress1</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/adr/adrdel[@adrradtyp='STR']/adrrad</item>
+        </target>
+      </row>
+      <row>
+      <source>
+        <item action="replace" type="xpathformat">ansv_postnummer</item>
+      </source>
+      <target>
+        <item action="replace" type="xpath">sjukvenh/adr/postn</item>
+      </target>
+    </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_postort</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/postadr</item>
+        </target>
+      </row>
+      <!--Variant på adresser-->
+      <!--<row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_adress1</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/adr/adrdel[1]/adrrad</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_postnummer</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/adr/adrdel[2]/adrrad</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_postort</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/adr/adrdel[3]/adrrad</item>
+        </target>
+      </row>-->
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_tel</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/telc[@telctyp='WT']/telcrad</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_fax</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/telc[@telctyp='FX']/telcrad</item>
+        </target>
+      </row>
+      <!--System cross-->
+      <!-- Sjukhus -->
+      <!--<row>
+        <source>
+          <item action="replace" type="xpathformat">CLINICNAME</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/sjukh</item>
+        </target>
+      </row>-->
+      <!--Klinik-->
+      <!--<row>
+        <source>
+          <item action="replace" type="xpathformat">DEPARTMENTNAME</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/klin</item>
+        </target>
+      </row>-->
+      <!--Avdelning-->
+      <!--<row>
+        <source>
+          <item action="replace" type="xpathformat">WARDNAME</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">sjukvenh/avd</item>
+        </target>
+      </row>-->
+    </rows>
+  </transform>
+</eyedoc>

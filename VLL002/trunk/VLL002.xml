@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<blankett xmlns="http://gainit.se/IBIS/BLANKETT/VLL002">
+  <patientED1>
+    <personnr />
+    <namn>
+      <fnamn />
+      <mnamn />
+      <tnamn />
+      <enamn />
+      <knamn />
+    </namn>
+    <adressED1 typ="H">
+      <adresstypED1 typ="STR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PNR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PAD">
+        <del />
+      </adresstypED1>
+    </adressED1>
+    <telefonED1 typ="Hem">
+      <nummer />
+    </telefonED1>
+    <kon />
+    <fodelsetidpunkt />
+  </patientED1>
+  <enheterED1>
+    <enhetED1 typ="Ansvarig">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+      <personalED1 typ="Ansvarig">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+      <personalED1 typ="Sjukskoterska">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+      <personalED1 typ="Kurator">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+    </enhetED1>
+  </enheterED1>
+  <formlist>
+    <formgroup typ="kontakter_dagtid">
+      <string50value typ="telefon1">
+        <value />
+      </string50value>
+      <string50value typ="telefon2">
+        <value />
+      </string50value>
+      <string50value typ="telefon3">
+        <value />
+      </string50value>
+      <string100value typ="namn1">
+        <value />
+      </string100value>
+      <string100value typ="namn2">
+        <value />
+      </string100value>
+      <string100value typ="namn3">
+        <value />
+      </string100value>
+    </formgroup>
+    <formgroup typ="kontakter_annan_tid">
+      <string50value typ="telefon1">
+        <value />
+      </string50value>
+      <string50value typ="telefon2">
+        <value />
+      </string50value>
+      <string50value typ="telefon3">
+        <value />
+      </string50value>
+      <string100value typ="namn1">
+        <value />
+      </string100value>
+      <string100value typ="namn2">
+        <value />
+      </string100value>
+      <string100value typ="namn3">
+        <value />
+      </string100value>
+    </formgroup>
+    <formgroup typ="patientuppgifter">
+      <string1000value typ="behov_om_info">
+        <value />
+      </string1000value>
+      <string1000value typ="utreds_for">
+        <value />
+      </string1000value>
+      <booleanvalue typ="informerat_varden">
+        <value />
+      </booleanvalue>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1">
+      <string250value typ="annat">
+        <value />
+      </string250value>
+      <booleanvalue typ="annat">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="somn">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="trotthet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="smarta">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="kost">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="vikt">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="fysisk_aktivitet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="tobaksvanor">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="sexualitet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="oro">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="radsla">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="relationer">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="alkohol">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="narstaende">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="minderariga_barn">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="livsaskadningsfragor">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="nedstamdhet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="arbete">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="studier">
+        <value />
+      </booleanvalue>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1_mal1">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1_mal2">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1_mal3">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1_mal4">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig1_mal5">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar1">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar2">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar3">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar4">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar5">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar6">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar7">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar8">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar9">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="undersokningar10">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="egenvard1">
+      <string4000value typ="text">
+        <value />
+      </string4000value>
+    </formgroup>
+    <formgroup typ="praktiska_fragor">
+      <string4000value typ="text">
+        <value />
+      </string4000value>
+    </formgroup>
+    <formgroup typ="behandling">
+      <string500value typ="uppfoljning">
+        <value />
+      </string500value>
+      <string500value typ="info_om_effekter">
+        <value />
+      </string500value>
+      <string4000value typ="patientforeningar">
+        <value />
+      </string4000value>
+      <booleanvalue typ="behandlingskonferens">
+        <value />
+      </booleanvalue>
+      <datevalue typ="behandlingskonferens">
+        <value />
+      </datevalue>
+    </formgroup>
+    <formgroup typ="planerad_behandling1">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling2">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling3">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling4">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling5">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling6">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling7">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling8">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling9">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling10">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling11">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling12">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling13">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling14">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling15">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling16">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling17">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling18">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling19">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="planerad_behandling20">
+      <string50value typ="nr">
+        <value />
+      </string50value>
+      <string50value typ="tid">
+        <value />
+      </string50value>
+      <string50value typ="undersokning">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2">
+      <string250value typ="annat">
+        <value />
+      </string250value>
+      <booleanvalue typ="annat">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="somn">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="trotthet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="smarta">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="kost">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="vikt">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="fysisk_aktivitet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="tobaksvanor">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="sexualitet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="oro">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="radsla">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="relationer">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="alkohol">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="narstaende">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="minderariga_barn">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="livsaskadningsfragor">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="nedstamdhet">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="arbete">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="studier">
+        <value />
+      </booleanvalue>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal1">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal2">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal3">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal4">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal5">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal6">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal7">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal8">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal9">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal10">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal11">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal12">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal13">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="viktigt_for_mig2_mal14">
+      <string50value typ="mal">
+        <value />
+      </string50value>
+      <string50value typ="atgarder">
+        <value />
+      </string50value>
+      <string50value typ="tidplan">
+        <value />
+      </string50value>
+      <string50value typ="uppfoljning">
+        <value />
+      </string50value>
+      <string50value typ="signatur">
+        <value />
+      </string50value>
+    </formgroup>
+    <formgroup typ="egenvard2">
+      <string4000value typ="text">
+        <value />
+      </string4000value>
+    </formgroup>
+    <formgroup typ="ovriga_fragor">
+      <string4000value typ="text">
+        <value />
+      </string4000value>
+    </formgroup>
+    <formgroup typ="kannedom">
+      <booleanvalue typ="fornyad_medicinsk_bedomning">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="fast_vardkontakt">
+        <value />
+      </booleanvalue>
+      <booleanvalue typ="vardval">
+        <value />
+      </booleanvalue>
+    </formgroup>
+  </formlist>
+  <diagnosED1>
+    <statusED1 event="Standard">
+      <somatisk />
+      <psykisk />
+      <tidpunkt />
+      <datum />
+      <behandlingED1 typ="Standard">
+        <resultat />
+        <varde />
+        <aktuellt />
+        <titel />
+        <beskrivning />
+        <tidpunkt />
+        <datum />
+        <status />
+        <prio />
+      </behandlingED1>
+    </statusED1>
+  </diagnosED1>
+  <lakemedelED1 />
+  <kontaktED1 />
+  <check>
+    <subcheck>
+      <usercheck>
+        <checked />
+        <username />
+        <usercode />
+        <timestamp />
+      </usercheck>
+    </subcheck>
+  </check>
+</blankett>

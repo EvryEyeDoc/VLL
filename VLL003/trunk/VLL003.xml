@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<blankett xmlns="http://gainit.se/IBIS/BLANKETT/VLL003">
+  <patientED1>
+    <personnr />
+    <namn>
+      <fnamn />
+      <mnamn />
+      <tnamn />
+      <enamn />
+      <knamn />
+    </namn>
+    <adressED1 typ="H">
+      <adresstypED1 typ="STR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PNR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PAD">
+        <del />
+      </adresstypED1>
+    </adressED1>
+    <telefonED1 typ="Hem">
+      <nummer />
+    </telefonED1>
+    <kon />
+    <fodelsetidpunkt />
+  </patientED1>
+  <enheterED1>
+    <enhetED1 typ="Ansvarig">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+      <adressED1 typ="WP">
+        <adresstypED1 typ="STR">
+          <del />
+        </adresstypED1>
+        <adresstypED1 typ="PNR">
+          <del />
+        </adresstypED1>
+        <adresstypED1 typ="PAD">
+          <del />
+        </adresstypED1>
+      </adressED1>
+      <telefonED1 typ="Arbete">
+        <nummer />
+      </telefonED1>
+    </enhetED1>
+  </enheterED1>
+  <formlist>
+    <formgroup typ="Fotoinfo">
+      <string50value typ="Fotograferingstid">
+        <value />
+      </string50value>
+      <string250value typ="Minneskort">
+        <value />
+      </string250value>
+      <string250value typ="Fotograf">
+        <value />
+      </string250value>
+      <string250value typ="Bestallare">
+        <value />
+      </string250value>
+      <string250value typ="BestallandeKlinik">
+        <value />
+      </string250value>
+      <datevalue typ="fotograferingsdatum">
+        <value />
+      </datevalue>
+    </formgroup>
+  </formlist>
+  <diagnosED1 />
+  <lakemedelED1 />
+  <kontaktED1 />
+  <check>
+    <subcheck>
+      <usercheck>
+        <checked />
+        <username />
+        <usercode />
+        <timestamp />
+      </usercheck>
+    </subcheck>
+  </check>
+</blankett>

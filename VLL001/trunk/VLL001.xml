@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<blankett xmlns="http://gainit.se/IBIS/BLANKETT/VLL001">
+  <patientED1>
+    <personnr />
+    <namn>
+      <fnamn />
+      <mnamn />
+      <tnamn />
+      <enamn />
+      <knamn />
+    </namn>
+    <adressED1 typ="H">
+      <adresstypED1 typ="STR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PNR">
+        <del />
+      </adresstypED1>
+      <adresstypED1 typ="PAD">
+        <del />
+      </adresstypED1>
+    </adressED1>
+    <telefonED1 typ="Mobil">
+      <nummer />
+    </telefonED1>
+    <kon />
+    <fodelsetidpunkt />
+  </patientED1>
+  <enheterED1>
+    <enhetED1 typ="Ansvarig">
+      <enhet />
+      <avdelning />
+      <klinik />
+      <sjukhus />
+      <personalED1 typ="Ansvarig">
+        <namn>
+          <fnamn />
+          <mnamn />
+          <tnamn />
+          <enamn />
+          <knamn />
+        </namn>
+        <underskrift>
+          <ort />
+          <datum />
+        </underskrift>
+        <titelkod />
+        <titel />
+        <signatur />
+        <specialitet />
+      </personalED1>
+    </enhetED1>
+  </enheterED1>
+  <formlist>
+    <formgroup typ="galler_for_remittering_till">
+      <string250value typ="galler_for_remittering_till">
+        <value />
+      </string250value>
+    </formgroup>
+    <formgroup typ="ovriga_uppgifter">
+      <string50value typ="tillstand_kraver_foljeslagare">
+        <value />
+      </string50value>
+      <string50value typ="bada_medfoljer">
+        <value />
+      </string50value>
+      <string50value typ="tillstand_kraver_liggande">
+        <value />
+      </string50value>
+      <string50value typ="kan_samaka">
+        <value />
+      </string50value>
+      <string50value typ="hjalpmedel">
+        <value />
+      </string50value>
+      <string250value typ="kan_samaka">
+        <value />
+      </string250value>
+      <string250value typ="hjalpmedel">
+        <value />
+      </string250value>
+      <string500value typ="ovrigt_av_vikt">
+        <value />
+      </string500value>
+    </formgroup>
+    <formgroup typ="intygets_giltighetstid">
+      <datevalue typ="fran">
+        <value />
+      </datevalue>
+      <datevalue typ="till">
+        <value />
+      </datevalue>
+    </formgroup>
+    <formgroup typ="avser_resa_for">
+      <string50value typ="vard_inom_lanet">
+        <value>nej</value>
+      </string50value>
+      <string50value typ="utomlansvard">
+        <value>nej</value>
+      </string50value>
+      <string50value typ="vardgaranti">
+        <value>nej</value>
+      </string50value>
+      <string50value typ="fritt_vardval">
+        <value>nej</value>
+      </string50value>
+    </formgroup>
+    <formgroup typ="med_tillstand_medger_resa">
+      <string50value typ="taxi">
+        <value>nej</value>
+      </string50value>
+      <string50value typ="buss">
+        <value>nej</value>
+      </string50value>
+      <string50value typ="flyg">
+        <value>nej</value>
+      </string50value>
+    </formgroup>
+  </formlist>
+  <diagnosED1 />
+  <lakemedelED1 />
+  <kontaktED1 />
+  <check>
+    <subcheck>
+      <usercheck>
+        <checked />
+        <username />
+        <usercode />
+        <timestamp />
+      </usercheck>
+    </subcheck>
+  </check>
+</blankett>

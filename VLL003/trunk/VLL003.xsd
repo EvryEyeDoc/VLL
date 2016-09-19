@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns:tns="http://gainit.se/IBIS/BLANKETT/VLL003" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://gainit.se/IBIS/BLANKETT/VLL003" xmlns="http://www.w3.org/2001/XMLSchema">
+  <!--*****    EyeDoc DataTyper v1.2.0 - 2010-11-01 EB     *****-->
+  <simpleType name="guid">
+    <annotation>
+      <documentation>Guid - Globally Unique Identifier (128 bit)</documentation>
+    </annotation>
+    <restriction base="string">
+      <maxLength value="38" />
+      <pattern value="\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="String50">
+    <restriction base="string">
+      <maxLength value="50" />
+    </restriction>
+  </simpleType>
+  <simpleType name="String100">
+    <restriction base="string">
+      <maxLength value="100" />
+    </restriction>
+  </simpleType>
+  <simpleType name="String250">
+    <restriction base="string">
+      <maxLength value="250" />
+    </restriction>
+  </simpleType>
+  <simpleType name="String500">
+    <restriction base="string">
+      <maxLength value="500" />
+    </restriction>
+  </simpleType>
+  <simpleType name="String1000">
+    <restriction base="string">
+      <maxLength value="1000" />
+    </restriction>
+  </simpleType>
+  <simpleType name="StringMax">
+    <restriction base="string">
+      <maxLength value="4000" />
+    </restriction>
+  </simpleType>
+  <complexType name="String50Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:String50" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="String100Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:String100" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="String250Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:String250" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="String500Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:String500" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="String1000Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:String1000" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="String4000Value">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:StringMax" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="BooleanValue">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="boolean" default="0" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="DateValue">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="date" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="IntValue">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="int" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="DoubleValue">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="double" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListValues" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="StringUnboundValue">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="value" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_ListValues" />
+  </complexType>
+  <simpleType name="StringUnbounded">
+    <annotation>
+      <documentation>Generic String field with unbounded length.</documentation>
+    </annotation>
+    <restriction base="string">
+    </restriction>
+  </simpleType>
+  <!--*****     Formlist     *****-->
+  <complexType name="FormList">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="formgroup" type="tns:FormGroup" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="FormGroup">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="string50value" type="tns:String50Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="string100value" type="tns:String100Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="string250value" type="tns:String250Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="string500value" type="tns:String500Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="string1000value" type="tns:String1000Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="stringUnboundValue" type="tns:StringUnboundValue" />
+      <element minOccurs="0" maxOccurs="unbounded" name="string4000value" type="tns:String4000Value" />
+      <element minOccurs="0" maxOccurs="unbounded" name="booleanvalue" type="tns:BooleanValue" />
+      <element minOccurs="0" maxOccurs="unbounded" name="datevalue" type="tns:DateValue" />
+      <element minOccurs="0" maxOccurs="unbounded" name="intvalue" type="tns:IntValue" />
+      <element minOccurs="0" maxOccurs="unbounded" name="doublevalue" type="tns:DoubleValue" />
+    </sequence>
+    <attribute name="typ" type="tns:enum_ListGroup" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <simpleType name="enum_ListGroup">
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Fotoinfo" />
+    </restriction>
+  </simpleType>
+  <simpleType name="enum_ListValues">
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Fotograferingstid" />
+      <enumeration value="Minneskort" />
+      <enumeration value="Fotograf" />
+      <enumeration value="Bestallare" />
+      <enumeration value="BestallandeKlinik" />
+      <enumeration value="fotograferingsdatum" />
+    </restriction>
+  </simpleType>
+
+  <!--*****     Patient     *****-->
+  <complexType name="PatientED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="personnr" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="1" name="namn" type="tns:Namn" />
+      <element minOccurs="0" maxOccurs="unbounded" name="adressED1" type="tns:AdressED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="telefonED1" type="tns:TelefonED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="tolkbehovED1" type="tns:TolkbehovED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="narstaendeED1" type="tns:NarstaendeED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="foretradareED1" type="tns:ForetradareED1" />
+      <element minOccurs="0" maxOccurs="1" name="underskrift" type="tns:OrtDatum" />
+      <element minOccurs="1" maxOccurs="1" name="kon" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="fodelsetidpunkt" type="dateTime" />
+      <element minOccurs="0" maxOccurs="1" name="etnicitetED1" type="tns:EtnicitetED1" />
+      <element minOccurs="0" maxOccurs="1" name="avlidenED1" type="tns:AvlidenED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" /> 
+  </complexType>
+  <complexType name="EtnicitetED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="folkgrupp" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="land" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="ForetradareED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="personnr" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="relation" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="namn" type="tns:Namn" />
+      <element minOccurs="0" maxOccurs="unbounded" name="telefonED1" type="tns:TelefonED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="adressED1" type="tns:AdressED1" />
+      <element minOccurs="0" maxOccurs="1" name="underskrift" type="tns:OrtDatum" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_Foretradare" />
+  </complexType>
+  <simpleType name="enum_Foretradare">
+    <!--Klass 4 - dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="NarstaendeED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="personnr" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="namn" type="tns:Namn" />
+      <element minOccurs="0" maxOccurs="unbounded" name="telefonED1" type="tns:TelefonED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="adressED1" type="tns:AdressED1" />
+      <element minOccurs="1" maxOccurs="1" name="relation" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="1" name="underskrift" type="tns:OrtDatum" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_Narstaende" />
+  </complexType>
+  <simpleType name="enum_Narstaende">
+    <!--Klass 4 - dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="TolkbehovED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="behov" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="bestalld" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="sprak" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="tolksatt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="registreringsdatum" type="date" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_Tolkbehov" />
+  </complexType>
+  <simpleType name="enum_Tolkbehov">
+    <!--Klass 4 - dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="AvlidenED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="orsak" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <!--*****     Sjukvårdsenhet     *****-->
+  <complexType name="EnheterED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="enhetED1" type="tns:EnhetED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <complexType name="EnhetED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="enhet" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="avdelning" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="klinik" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="sjukhus" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="adressED1" type="tns:AdressED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="telefonED1" type="tns:TelefonED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="personalED1" type="tns:PersonalED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_EnhetsTyp" />
+  </complexType>
+  <simpleType name="enum_EnhetsTyp">
+    <!--Klass 2 - Fast -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Ansvarig">
+        <annotation>
+          <documentation>Ansvarig Enhet</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Remitterad">
+        <annotation>
+          <documentation>Remitterad Enhet</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Undersokning">
+        <annotation>
+          <documentation>Undersökningsplats</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Behandling">
+        <annotation>
+          <documentation>Behandlingsplats</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Sjukvårdspersonal     *****-->
+  <complexType name="PersonalED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="namn" type="tns:Namn" />
+      <element minOccurs="0" maxOccurs="1" name="underskrift" type="tns:OrtDatum" />
+      <element minOccurs="1" maxOccurs="1" name="titelkod" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="signatur" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="specialitet" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_PersonalTyp" />
+  </complexType>
+  <simpleType name="enum_PersonalTyp">
+    <!--Klass 2 - Fast -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Ansvarig">
+        <annotation>
+          <documentation>Ansvarig Läkare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bedomande">
+        <annotation>
+          <documentation>Bedömande Läkare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Remitterande">
+        <annotation>
+          <documentation>Remitterande Läkare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Remitteringsmottagare">
+        <annotation>
+          <documentation>Remitteringsmottagare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sjukskoterska">
+        <annotation>
+          <documentation>Sjuksköterska</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Underskoterska">
+        <annotation>
+          <documentation>Undersköterska</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sekreterare">
+        <annotation>
+          <documentation>Sekreterare</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Ortdatum     *****-->
+  <complexType name="OrtDatum">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="ort" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <!--*****     Namn     *****-->
+  <complexType name="Namn">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="fnamn" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="mnamn" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="tnamn" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="enamn" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="knamn" type="tns:String250" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <!--*****     Adress     *****-->
+  <complexType name="AdressED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="adresstypED1" type="tns:AdressTypED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="gilttid" type="tns:Giltighetstid" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_AdressTyp" />
+  </complexType>
+  <complexType name="AdressTypED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="del" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_AdressDel" />
+  </complexType>
+  <complexType name="Giltighetstid">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="fram" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="tillm" type="date" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <simpleType name="enum_AdressDel">
+    <!--Klass 2 - Fast -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="BNM">
+        <annotation>
+          <documentation>Båtnamn</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CNT">
+        <annotation>
+          <documentation>Land</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CPA">
+        <annotation>
+          <documentation>Landsting eller församling</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CTY">
+        <annotation>
+          <documentation>Stad</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="FNM">
+        <annotation>
+          <documentation>Lägenhetsnummer</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HNR">
+        <annotation>
+          <documentation>Husnummer</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HNM">
+        <annotation>
+          <documentation>Husnamn</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="POB">
+        <annotation>
+          <documentation>Postbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SAL">
+        <annotation>
+          <documentation>Gatuadress</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="STA">
+        <annotation>
+          <documentation>Delstat eller provins</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="STR">
+        <annotation>
+          <documentation>Gatunamn</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HP">
+        <annotation>
+          <documentation>Hemsida</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EPO">
+        <annotation>
+          <documentation>E-post</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PNR">
+        <annotation>
+          <documentation>Postnummer</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PAD">
+        <annotation>
+          <documentation>Postadress</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <simpleType name="enum_AdressTyp">
+    <!--Klass 2 - Fast -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="BIR">
+        <annotation>
+          <documentation>Födelseplats</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="H">
+        <annotation>
+          <documentation>Hem</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HP">
+        <annotation>
+          <documentation>Ordinarie hemadress</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="HV">
+        <annotation>
+          <documentation>Fritidsbostad</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="WP">
+        <annotation>
+          <documentation>Arbetsplats</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Telefon     *****-->
+  <complexType name="TelefonED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="nummer" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TelefonTyp" />
+  </complexType>
+  <simpleType name="enum_TelefonTyp">
+    <!--Klass 2 - Fast -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Hem">
+        <annotation>
+          <documentation>Hemtelefon</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Arbete">
+        <annotation>
+          <documentation>Arbetstelefon</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AS">
+        <annotation>
+          <documentation>Telefonsvarare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EC">
+        <annotation>
+          <documentation>Nödkontakt</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Mobil">
+        <annotation>
+          <documentation>Mobilkontakt</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PG">
+        <annotation>
+          <documentation>Personsökare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="FX">
+        <annotation>
+          <documentation>Telefax</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Diagnos     *****-->
+  <complexType name="DiagnosED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="deldiagnosED1" type="tns:DelDiagnosED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="anamnesED1" type="tns:AnamnesED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="statusED1" type="tns:StatusED1" />
+      <!--Symptom ersätts av status helt-->
+      <!-- <element minOccurs="0" maxOccurs="unbounded" name="symptomED1" type="tns:SymptomED1" />-->
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="DelDiagnosED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="diagnoskod" type="tns:Diagnoskod2" />
+      <element minOccurs="1" maxOccurs="1" name="diagnos" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="patientvetskap" type="tns:String50" />
+      <!--Tidigare behandling-->
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_DiagnosTyp" />
+  </complexType>
+  <simpleType name="Diagnoskod2">
+    <annotation>
+      <documentation>ICD 10 (ex. F20 eller F20.1)</documentation>
+    </annotation>
+    <restriction base="string">
+      <minLength value="3" />
+      <maxLength value="10" />
+      <pattern value="[A-Z]{1}\d{2}" />
+      <pattern value="[A-Z]{1}\d{2}[A-Z0-9]" />
+      <pattern value="[A-Z]{1}\d{2}.[A-Z0-9]{1}" />
+      <pattern value="[A-Z]{1}\d{2}.[A-Z0-9]{1}[A-Z0-9*]{1}" />
+    </restriction>
+  </simpleType>
+  <simpleType name="enum_DiagnosTyp">
+    <!--Klass 3 - Standard -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Primar">
+        <annotation>
+          <documentation>Primärdiagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sekundar">
+        <annotation>
+          <documentation>Sekundärdiagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Preleminar">
+        <annotation>
+          <documentation>Preleminär diagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Faststalld">
+        <annotation>
+          <documentation>Fastställd diagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Misstankt">
+        <annotation>
+          <documentation>Misstänkt diagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Bakomliggande">
+        <annotation>
+          <documentation>Bakomliggande diagnos</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Biverkning">
+        <annotation>
+          <documentation>Biverkning</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="SymptomED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_SymptomTyp" />
+  </complexType>
+  <simpleType name="enum_SymptomTyp">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGEN">
+        <annotation>
+          <documentation>Userinput - när typ väljs av användaren via Textbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ANNAN">
+        <annotation>
+          <documentation>Annan/Ospecificerad</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="AnamnesED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="besoksorsak" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="event" type="tns:enum_EventList" />
+  </complexType>
+  <complexType name="StatusED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="statusvardeED1" type="tns:StatusVardeED1" />
+      <element minOccurs="1" maxOccurs="1" name="somatisk" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="psykisk" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="0" maxOccurs="unbounded" name="undersokningED1" type="tns:UndersokningED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="behandlingED1" type="tns:BehandlingED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="administrationED1" type="tns:AdministrationED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="event" type="tns:enum_EventList" />
+  </complexType>
+  <simpleType name="enum_EventList">
+    <!--Klass 2 - Fast -->
+    <!--Fattas värden, lägg då till enligt följden-->
+    <!--Används aldrig själv utan endast som en numrering istället för [1],[2],...,[n] tillsammans med annan enum i samma eller överordnad typ-->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV1">
+        <annotation>
+          <documentation>Tillfälle 1</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV2">
+        <annotation>
+          <documentation>Tillfälle 2</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV3">
+        <annotation>
+          <documentation>Tillfälle 3</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV4">
+        <annotation>
+          <documentation>Tillfälle 4</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV5">
+        <annotation>
+          <documentation>Tillfälle 5</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV6">
+        <annotation>
+          <documentation>Tillfälle 6</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV7">
+        <annotation>
+          <documentation>Tillfälle 7</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV8">
+        <annotation>
+          <documentation>Tillfälle 8</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV9">
+        <annotation>
+          <documentation>Tillfälle 9</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EV10">
+        <annotation>
+          <documentation>Tillfälle 10</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="StatusVardeED1">
+    <sequence>
+      <!--Används för värde, ex. vikt: 90kg-->
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <!--Används för ja/nej kryss (ex. har värdet tagits?)-->
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <!--Används för beskrivning-->
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <!--Används vid fölt där anv. får skriva en egen statustitel-->
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_StatusTyp" />
+  </complexType>
+  <simpleType name="enum_StatusTyp">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="SBLT">
+        <annotation>
+          <documentation>Systoliskt Blodtryck (övre)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DBLT">
+        <annotation>
+          <documentation>Diastoliskt Blodtryck (undre)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LANGD">
+        <annotation>
+          <documentation>Längd</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="VIKT">
+        <annotation>
+          <documentation>Vikt</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AGE">
+        <annotation>
+          <documentation>Ålder</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BLV">
+        <annotation>
+          <documentation>Blodvärde</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PAD">
+        <annotation>
+          <documentation>PAD-svar</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BUK">
+        <annotation>
+          <documentation>Bukomfång</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TRYCK">
+        <annotation>
+          <documentation>Tryckmätning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CYST">
+        <annotation>
+          <documentation>Urologi - Cystoskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TRUL">
+        <annotation>
+          <documentation>Urologi - TransRektalt UltraLjud</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MNP">
+        <annotation>
+          <documentation>Urologi - MNP</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="IPSS">
+        <annotation>
+          <documentation>Urologi - International Prostate Symptom Score (Symptomskattning vid prostatabesvär)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TUMT">
+        <annotation>
+          <documentation>Urologi - Transurethral Microwave Thermotherapy of the Prostate (Mikrovågsbehandling)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ESWL">
+        <annotation>
+          <documentation>Urologi - Extracorporeal shock wave lithotripsy (Stötvågsbehandling)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="FLRE">
+        <annotation>
+          <documentation>Urologi - Flöde/resurin</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="URODL">
+        <annotation>
+          <documentation>Urologi - Urinodling</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="REKT">
+        <annotation>
+          <documentation>Tarm - Rektoskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SIGM">
+        <annotation>
+          <documentation>Sigmoideoskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KOLO">
+        <annotation>
+          <documentation>Tarm - Koloskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GAST">
+        <annotation>
+          <documentation>Tarm - Gastroskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AVFO">
+        <annotation>
+          <documentation>Tarm - Avföringsodling</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KLYX">
+        <annotation>
+          <documentation>Tarm - KLYX</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MAMM">
+        <annotation>
+          <documentation>Bröst - Mammografi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BIOP">
+        <annotation>
+          <documentation>Biopsi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BLGR">
+        <annotation>
+          <documentation>Boldprov - Blodgrupp</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BLS">
+        <annotation>
+          <documentation>Boldprov - Blodstatus</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ELS">
+        <annotation>
+          <documentation>Boldprov - Elstatus</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KREA">
+        <annotation>
+          <documentation>Boldprov - Kreatinin</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LEVER">
+        <annotation>
+          <documentation>Boldprov - Leverstatus</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CRP">
+        <annotation>
+          <documentation>Boldprov - C-reaktivt protein</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SR">
+        <annotation>
+          <documentation>Boldprov - SR/B-SR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PSA">
+        <annotation>
+          <documentation>Boldprov - Prostataspecifikt antigen</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CEA">
+        <annotation>
+          <documentation>Boldprov - Carcinoembryonalt antigen</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TSH">
+        <annotation>
+          <documentation>Boldprov - Tyreoideastimulerande hormon</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PK">
+        <annotation>
+          <documentation>Boldprov - Protrombinkomplex</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BLSM">
+        <annotation>
+          <documentation>Blodsmitta</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TET">
+        <annotation>
+          <documentation>Testismarkörer</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="JNOT">
+        <annotation>
+          <documentation>Allergi - Jordnötter</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Lakemedel   *****-->
+  <complexType name="LakemedelED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="lakemedelshandelseED1" type="tns:LakemedelsHandelseED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <complexType name="LakemedelsHandelseED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="preparatED1" type="tns:PreparatED1" />
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="orsak" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_HandelseTyp" />
+    <attribute name="event" type="tns:enum_EventList" />
+  </complexType>
+  <simpleType name="enum_HandelseTyp">
+    <!--Klass 1 - Låst -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Ordination">
+        <annotation>
+          <documentation>Ordination/Förskrivning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Utlamning">
+        <annotation>
+          <documentation>Utlämning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Intag">
+        <annotation>
+          <documentation>Intag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Biverkning"><!--Användas när läkemedel orsakat en biverkning-->
+        <annotation>
+          <documentation>Biverkning</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="PreparatED1">
+    <sequence>
+      <!--Används för både läkemedel/anestesi-->
+      <!--Används för värde, ex. 4st-->
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <!--Används för styrka, ex. 100mg-->
+      <element minOccurs="1" maxOccurs="1" name="styrka" type="tns:String50" />
+      <!--Används för ja/nej kryss-->
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <!--Används för behandlingens varaktighet-->
+      <element minOccurs="1" maxOccurs="1" name="frm" type="date" />
+      <!--Används för behandlingens varaktighet-->
+      <element minOccurs="1" maxOccurs="1" name="tom" type="date" />
+      <!--Används vid fölt där anv. får skriva en egen statustitel-->
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <!--(För att det ska kunna finnas flera former för varje läkemedel, t.ex. både spruta & tablett)-->
+      <element minOccurs="0" maxOccurs="unbounded" name="preparatformED1" type="tns:PreparatFormED1"/>
+      <!--Biverkning-->
+      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1"/>
+      <element minOccurs="0" maxOccurs="unbounded" name="doseringED1" type="tns:DoseringED1"/>
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_PreparatNamn" />
+  </complexType>
+  <simpleType name="enum_PreparatNamn">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGEN">
+        <annotation>
+          <documentation>Userinput - när typ väljs av användaren via Textbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ANNAN">
+        <annotation>
+          <documentation>Annan/Ospecificerad</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="REHY">
+        <annotation>
+          <documentation>Rehydrex</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="PreparatFormED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_PreparatFormTyp" />
+  </complexType>
+  <simpleType name="enum_PreparatFormTyp">
+    <!--Klass 3 - Standard -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGEN">
+        <annotation>
+          <documentation>Userinput - när typ ej kan fastställas t.ex. för Textbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Tablett">
+        <annotation>
+          <documentation>Tablett</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Injektion">
+        <annotation>
+          <documentation>Spruta/Injektion</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Mask">
+        <annotation>
+          <documentation>Mask</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sond">
+        <annotation>
+          <documentation>Sond</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Intubation">
+        <annotation>
+          <documentation>Intubation - införande av en tub (rör) i luftstrupen</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Intravenos">
+        <annotation>
+          <documentation>Intravenös</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Epidural">
+        <annotation>
+          <documentation>Epidural</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Centralvenkateter">
+        <annotation>
+          <documentation>Centralvenkateter, kateter som lägges i central ven</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="DoseringED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_DoseringsTyp" />
+  </complexType>
+  <simpleType name="enum_DoseringsTyp">
+    <!--Klass 3 - Standard -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGEN">
+        <annotation>
+          <documentation>Userinput - när typ ej kan fastställas t.ex. för Textbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Mandag">
+        <annotation>
+          <documentation>Måndag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Tisdag">
+        <annotation>
+          <documentation>Tisdag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Onsdag">
+        <annotation>
+          <documentation>Onsdag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Torsdag">
+        <annotation>
+          <documentation>Torsdag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Fredag">
+        <annotation>
+          <documentation>Fredag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Lordag">
+        <annotation>
+          <documentation>Lördag</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sondag">
+        <annotation>
+          <documentation>Söndag</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Kontakt     *****-->
+  <complexType name="KontaktED1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="kontakteventED1" type="tns:KontaktEventED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <complexType name="KontaktEventED1">
+    <sequence>
+      <!--använd sjukvenh/sjukvpers för undersökare/plats info-->
+      <!--Vid Ordination     : det som ska göras-->
+      <!--för det som har gjorts se diagnos/status för undersökning eller behandling (även om inga resulatat nås), ordination är endast det som planeras göras-->
+      <element minOccurs="0" maxOccurs="unbounded" name="undersokningED1" type="tns:UndersokningED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="behandlingED1" type="tns:BehandlingED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="administrationED1" type="tns:AdministrationED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="event" type="tns:enum_EventList" />
+  </complexType>
+  <complexType name="BehandlingED1">
+    <sequence>
+      <!--använd sjukvenh/sjukvpers för avsändar/mottagar info-->
+      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1"/>
+      <element minOccurs="1" maxOccurs="1" name="resultat" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <!--status = Ej påbörjad/Inställd/Pågående/Avbruten/Avslutad - Enligt V-TIM-->
+      <element minOccurs="1" maxOccurs="1" name="status" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="prio" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="behandlingsdataED1" type="tns:BehandlingsDataED1"/>
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_BehandlingsTyp" />
+  </complexType>
+  <simpleType name="enum_BehandlingsTyp">
+    <!--Klass 3 - Standard -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OP">
+        <annotation>
+          <documentation>Operation</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="BehandlingsDataED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_BehandlingsDataTyp" />
+  </complexType>
+  <simpleType name="enum_BehandlingsDataTyp">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="BiverkningED1"><!--SKA DETTA TILL LÄKEMEDEL?-->
+    <sequence>
+      <!--Använd diagnos för diagnos och grundsjukdom!-->
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="status" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="effekt" type="tns:StringUnbounded" />
+      <!--Återkom reaktionen vid insättning-->
+      <element minOccurs="1" maxOccurs="1" name="insattning" type="tns:String50" />
+      <!--Upphör reaktionen vid utsättning-->
+      <element minOccurs="1" maxOccurs="1" name="utsattning" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <complexType name="UndersokningED1">
+    <sequence>
+      <!--använd sjukvenh/sjukvpers för avsändar/mottagar info-->
+      <!--använd Diagnos för resultat av undersökningen (värden, m.m.)-->
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <!--Används för ja/nej kryss-->
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="status" type="tns:String50" />
+      <!--Ej påbörjad/Inställd/Pågående/Avbruten/Avslutad - Enligt V-TIM-->
+      <element minOccurs="1" maxOccurs="1" name="prio" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_UndersokningsTyp" />
+  </complexType>
+  <simpleType name="enum_UndersokningsTyp">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="EGEN">
+        <annotation>
+          <documentation>Userinput - när typ ej kan fastställas t.ex. för Textbox</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ANNAN">
+        <annotation>
+          <documentation>Annan/Ospecificerad</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="GAST">
+        <annotation>
+          <documentation>Gastroskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KOLO">
+        <annotation>
+          <documentation>Koloskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CYST">
+        <annotation>
+          <documentation>Cystoskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ESWL">
+        <annotation>
+          <documentation>Stötvågsbehandling (Extracorporeal Shock Wave Lithotripsy)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TUMT">
+        <annotation>
+          <documentation>Mikrovågsbehandling av prostata (Transurethral Microwave Thermotherapy of the Prostate)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RECT">
+        <annotation>
+          <documentation>Rectoskopi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ERCP">
+        <annotation>
+          <documentation>Endoskopisk retrograd kolangiopankreatografi (Endoscopic retrograde cholangiopancreatography)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="INVT">
+        <annotation>
+          <documentation>Invasiv tryckmätning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RTG">
+        <annotation>
+          <documentation>Röntgen</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SCG">
+        <annotation>
+          <documentation>Scintigrafi</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="UL">
+        <annotation>
+          <documentation>Ultraljud</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="MR">
+        <annotation>
+          <documentation>MR</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CT">
+        <annotation>
+          <documentation>Datortomografi (computerized tomography)</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KU">
+        <annotation>
+          <documentation>Klinisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PREX">
+        <annotation>
+          <documentation>Provexcision eller operation med histopatologisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OBD">
+        <annotation>
+          <documentation>Obduktion med histopatologisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="CYT">
+        <annotation>
+          <documentation>Cytologisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OHI">
+        <annotation>
+          <documentation>Operation utan histopatologisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OBDHI">
+        <annotation>
+          <documentation>Obduktion utan histopatologisk undersökning</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ALAB">
+        <annotation>
+          <documentation>Annan laboratorieundersökning</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="AdministrationED1">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="tidpunkt" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="datum" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_AdministrationsTyp" />
+  </complexType>
+  <simpleType name="enum_AdministrationsTyp">
+    <!--Klass 4 - Dynamisk -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standardvärde (default)</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Signering     *****-->
+  <complexType name="SigneringarED1"> <!--Används för tillfället inte-->
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="signeringED1" type="tns:SigneringED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <!--<attribute name="typ" type="tns:enum_UndersokningsTyp" />-->
+  </complexType>
+  <complexType name="SigneringED1">
+    <sequence>
+      <!--Värden: Sign/Avvikelse/Historik/Avsignerat(null)/-->
+      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+    <attribute name="typ" type="tns:enum_SigneringsTyp" />
+  </complexType>
+  <simpleType name="enum_SigneringsTyp">
+    <!--Klass 5 - Odefinierad -->
+    <restriction base="string">
+      <maxLength value="50" />
+      <enumeration value="xxx">
+        <annotation>
+          <documentation>xxx</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <!--*****     Check     *****-->
+  <complexType name="UserCheck">
+    <annotation>
+      <documentation>Holds user information of the check. Add this XPath to checkitem@checkpath in XAML, XmlDataProvider checkData</documentation>
+    </annotation>
+    <sequence>
+      <element name="checked" type="boolean" default="false">
+        <annotation>
+          <documentation>Set to true, on change.</documentation>
+        </annotation>
+      </element>
+      <element name="username" type="tns:String250"/>
+      <element name="usercode" type="tns:enum_UserCode"/>
+      <element name="timestamp" type="dateTime"/>
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <simpleType name="enum_UserCode">
+    <!-- SFS 1998:531 -->
+    <restriction base="string">
+      <maxLength value="5"/>
+      <enumeration value="AP">
+        <annotation>
+          <documentation>Apotekare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AT">
+        <annotation>
+          <documentation>Arbetsterapeut</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="AU">
+        <annotation>
+          <documentation>Audionom</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BA">
+        <annotation>
+          <documentation>Barnmorska</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="BM">
+        <annotation>
+          <documentation>Biomedicinsk analytiker</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="DT">
+        <annotation>
+          <documentation>Dietist</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="KP">
+        <annotation>
+          <documentation>Kiropraktor</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LG">
+        <annotation>
+          <documentation>Logoped</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="LK">
+        <annotation>
+          <documentation>Läkare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="NA">
+        <annotation>
+          <documentation>Naprapat</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OP">
+        <annotation>
+          <documentation>Optiker</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="OT">
+        <annotation>
+          <documentation>Ortopedingenjör</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PS">
+        <annotation>
+          <documentation>Psykolog</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="PT">
+        <annotation>
+          <documentation>Psykoterapeut</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RC">
+        <annotation>
+          <documentation>Receptarie</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="RS">
+        <annotation>
+          <documentation>Röntgensjuksköterska</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SG">
+        <annotation>
+          <documentation>Sjukgymnast</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SF">
+        <annotation>
+          <documentation>Sjukhusfysiker</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="SJ">
+        <annotation>
+          <documentation>Sjuksköterska</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TH">
+        <annotation>
+          <documentation>Tandhygienist</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="TL">
+        <annotation>
+          <documentation>Tandläkare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sekr">
+        <annotation>
+          <documentation>Sekr</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Läk">
+        <annotation>
+          <documentation>Läk</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Ssk">
+        <annotation>
+          <documentation>Ssk</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Arbt">
+        <annotation>
+          <documentation>Arbt</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sjg">
+        <annotation>
+          <documentation>Sjg</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Kur">
+        <annotation>
+          <documentation>Kur</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Log">
+        <annotation>
+          <documentation>Log</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Psyk">
+        <annotation>
+          <documentation>Psyk</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Diet">
+        <annotation>
+          <documentation>Diet</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Usk">
+        <annotation>
+          <documentation>Usk</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="*">
+        <annotation>
+          <documentation>Any</documentation>
+        </annotation>
+      </enumeration>
+    </restriction>
+  </simpleType>
+  <complexType name="SubCheck">
+    <annotation>
+      <documentation>Holds a specific check</documentation>
+    </annotation>
+    <sequence>
+      <element name="usercheck" type="tns:UserCheck" minOccurs="1" maxOccurs="1"/>
+      <element minOccurs="0" maxOccurs="1" name="signeringED1" type="tns:SigneringED1" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <complexType name="Check">
+    <annotation>
+      <documentation>Holds a number of check's</documentation>
+    </annotation>
+    <sequence>
+      <element name="subcheck" type="tns:SubCheck" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="__Id" type="tns:guid"/>
+  </complexType>
+  <!--*****     Blankett     *****-->
+  <complexType name="Blankett">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="patientED1" type="tns:PatientED1" />
+      <element minOccurs="1" maxOccurs="1" name="enheterED1" type="tns:EnheterED1" />
+      <element minOccurs="1" maxOccurs="1" name="formlist" type="tns:FormList" />
+      <element minOccurs="1" maxOccurs="1" name="diagnosED1" type="tns:DiagnosED1" />
+      <element minOccurs="1" maxOccurs="1" name="lakemedelED1" type="tns:LakemedelED1" />
+      <element minOccurs="1" maxOccurs="1" name="kontaktED1" type="tns:KontaktED1" />
+      <element minOccurs="1" maxOccurs="1" name="check" type="tns:Check" />
+    </sequence>
+    <attribute name="__mainId" type="tns:guid" />
+    <attribute name="__form" type="int" />
+    <attribute name="__IBISVersion" type="int" />
+    <attribute name="__status" type="int" />
+    <attribute name="__version" type="dateTime" />
+    <attribute name="__Id" type="tns:guid" />
+  </complexType>
+  <element name="blankett" type="tns:Blankett" />
+</schema>

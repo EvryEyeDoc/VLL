@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<eyedoc>
+  <transform>
+    <global>
+      <source>
+        <xpath type="root">blankett</xpath>        
+      </source>
+      <target>
+        <xpath type="root">*/form/fieldcode</xpath>
+        <xpath type="format">field[@name='{0}']/@data</xpath>
+      </target>
+    </global>
+    <rows>
+      
+      <!--Opererad-->
+      <row>
+        <source>
+          <item type="text" action="replace"></item>
+          <item type="xpath" action="_if" argument="isequal">formlist/formgroup[@typ='Opererad']/string50value[@typ='OpereradI']/value</item>
+          <item action="_else" />
+            <item type="text" action="replace"> i </item>
+            <item type="xpath" action="add">formlist/formgroup[@typ='Opererad']/string50value[@typ='OpereradI']/value</item>
+            <item type="text" action="tomemory" arguments="OpereradI" />
+          <item action="_endif" />
+        </source>
+      </row>
+      <row>
+        <source>
+          <item type="text" action="replace"></item>
+          <item type="xpath" action="_if" argument="isequal">enheterED1/enhetED1[@typ='Behandling']/avdelning</item>
+          <item action="_else" />
+            <item type="text" action="replace"> på </item>
+            <item type="xpath" action="add">enheterED1/enhetED1[@typ='Behandling']/avdelning</item>
+            <item type="text" action="tomemory" arguments="OpereradPa" />
+          <item action="_endif" />
+        </source>
+      </row>
+      <row>
+        <source>
+          <item type="text" action="replace"></item>
+          <item type="xpath" action="_if" argument="isequal">formlist/formgroup[@typ='Opererad']/datevalue[@typ='Datum']/value</item>
+          <item action="_else" />
+            <item type="xpath">formlist/formgroup[@typ='Opererad']/datevalue[@typ='Datum']/value</item>
+            <item type="text" action="format" argument="date" arguments="&quot; den&quot; dd MMMM yyyy" />
+            <item type="text" action="tomemory" arguments="OpereradDen" />
+          <item action="_endif" />
+        </source>
+      </row>
+      <row>
+        <source>
+          <!-- Test if empty -->
+          <item action="add" type="frommemory" arguments="OpereradI" />
+          <item action="add" type="frommemory" arguments="OpereradPa" />
+          <item action="add" type="frommemory" arguments="OpereradDen" />
+          <item type="xpath" action="_if" argument="isequal"></item>
+          <item action="_else" />
+            <item action="replace" type="text">Opererad</item>
+            <item action="add" type="frommemory" arguments="OpereradI" />
+            <item action="add" type="frommemory" arguments="OpereradPa" />
+            <item action="add" type="frommemory" arguments="OpereradDen" />
+            <item type="text" action="add">&#13;&#10;</item>
+            <item type="text" action="tomemory" arguments="Opererad" />
+          <item action="_endif" />
+        </source>
+      </row>
+
+      <!--Postoperativ sårinfektion (Ytlig/Djup)-->
+      <row>
+        <source>
+          <item type="xpath" action="_if" argument="istrue">formlist/formgroup[@typ='Sarinfektion']/booleanvalue[@typ='Ytlig']/value</item>
+            <item type="text" action="add">Postoperativ sårinfektion: Ytlig sårinfektion </item>
+            <item type="xpath" action="add">formlist/formgroup[@typ='Sarinfektion']/datevalue[@typ='Ytlig']/value</item>
+            <item type="text" action="add">&#32;</item>
+            <item type="xpath" action="add">formlist/formgroup[@typ='Sarinfektion']/string50value[@typ='Ytlig']/value</item>
+            <item type="text" action="add">&#13;&#10;</item>
+            <item type="text" action="tomemory" arguments="YtligSarinfektion" />
+          <item action="_endif" />
+        </source>
+      </row>
+      <row>
+        <source>
+          <item type="xpath" action="_if" argument="istrue">formlist/formgroup[@typ='Sarinfektion']/booleanvalue[@typ='Djup']/value</item>
+            <item type="text" action="add">Postoperativ sårinfektion: Djup sårinfektion </item>
+            <item type="xpath" action="add">formlist/formgroup[@typ='Sarinfektion']/datevalue[@typ='Djup']/value</item>
+            <item type="text" action="add">&#32;</item>
+            <item type="xpath" action="add">formlist/formgroup[@typ='Sarinfektion']/string50value[@typ='Djup']/value</item>
+            <item type="text" action="add">&#13;&#10;</item>
+            <item type="text" action="tomemory" arguments="DjupSarinfektion" />
+          <item action="_endif" />
+        </source>
+      </row>
+      
+      
+      <row>
+        <source>
+
+          <item action="add" type="frommemory" arguments="Opererad" />
+          <item action="add" type="frommemory" arguments="YtligSarinfektion" />
+          <item action="add" type="frommemory" arguments="DjupSarinfektion" />
+
+          <item type="text" action="add">Odling utförd: </item>
+          <item type="xpath" action="add">formlist/formgroup[@typ='Odling']/datevalue[@typ='Odlingsdatum']/value</item>
+          <item type="text" action="add">&#13;&#10;</item>
+
+          <item type="text" action="add">Odlingssvar: </item>
+          <item type="xpath" action="add">formlist/formgroup[@typ='Odling']/string250value[@typ='Odlingssvar']/value</item>
+          <item type="text" action="add">&#13;&#10;</item>
+
+          <item type="text" action="add">Antibiotika insatt: </item>
+          <item type="xpath" action="add">formlist/formgroup[@typ='Antibiotika']/string50value[@typ='Insatt']/value</item>
+          
+        </source>
+        <target>
+          <item action="createfield" type="xpathformat">NcsSammanfattning</item>
+        </target>
+      </row>
+      
+    </rows>
+  </transform>
+</eyedoc>
