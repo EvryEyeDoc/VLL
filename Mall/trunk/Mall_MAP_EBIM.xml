@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eyedoc version="1.0">
+  <transform>
+    <global>
+      <source>
+        <xpath type="root">*/form/fieldcode</xpath>
+        <xpath type="format">field[@name='{0}']/@data</xpath>
+      </source>
+      <target>
+        <xpath type="root">blankett</xpath>
+      </target>
+    </global>
+    <rows>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">datum</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">TempValueList/TempValueDate[@typ='Group1']/Value1</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">datum</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">TempValueList/TempValueDate[@typ='Group1']/Value2</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">datum</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">TempValueList/TempValueDate[@typ='Group1']/Value3</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_personnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/personnr</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_namn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/namn/knamn</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_adress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='Standard']/adresstypED1[@typ='Gatuadress']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postnr</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='Standard']/adresstypED1[@typ='Postnummer']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_postadress</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/adressED1[@typ='Standard']/adresstypED1[@typ='Postort']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">pat_telbostad</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">patientED1/telefonED1[@typ='Standard']/nummer</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_vdgnamn</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/personalED1[@typ='Ansvarig']/namn/knamn</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_avd</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/avdelning</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_adress1</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='Gatuadress']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_postnummer</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='Postnummer']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_postort</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='Postort']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_tel</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/telefonED1[@typ='Standard']/nummer</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_fax</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/telefonED1[@typ='FX']/nummer</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_forskrivarkod</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='Forskrivarkod']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_arbetsplatskod</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='Arbetsplatskod']/del</item>
+        </target>
+      </row>
+      <row>
+        <source>
+          <item action="replace" type="xpathformat">ansv_forskrivarkod</item>
+          <item action="add" type="xpathformat">ansv_arbetsplatskod</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">enheterED1/enhetED1[@typ='Ansvarig']/adressED1[@typ='Standard']/adresstypED1[@typ='ForskrivarkodArbetsplatskod']/del</item>
+        </target>
+      </row>
+    </rows>
+  </transform>
+</eyedoc>

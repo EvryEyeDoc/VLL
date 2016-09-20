@@ -66,11 +66,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Mall\trunk\Mall.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Template_blankett\trunk\Template_blankett.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="VLL001\trunk\VLL001.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -98,9 +104,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Mall\trunk\Mall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\Dictionary\formsresourcedictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Template_blankett\trunk\Template_blankett.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VLL001\trunk\VLL001.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +134,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Template_blankett\trunk\Template_blankett.xml" />
+    <Resource Include="Template_blankett\trunk\Template_blankett_MAP_EBIM.xml" />
     <Resource Include="VLL001\trunk\VLL001.xml" />
     <Resource Include="VLL001\trunk\VLL001_MAP_EBIM.xml" />
   </ItemGroup>
@@ -145,6 +161,10 @@
     <Resource Include="VLL004\trunk\VLL004_RetTra.xml">
       <SubType>Designer</SubType>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Mall\trunk\Mall.xml" />
+    <Resource Include="Mall\trunk\Mall_MAP_EBIM.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

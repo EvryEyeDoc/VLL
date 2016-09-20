@@ -5,7 +5,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Dictionary/formsresourcedictionary.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            
+
             <!-- Trädet -->
             <XmlDataProvider x:Key="myData" XPath="/Data">
                 <x:XData>
@@ -43,10 +43,29 @@
 
         </ResourceDictionary>
     </StackPanel.Resources>
-
     <!--Sida 1 i dokumentet-->
+    <Border Padding="0" Margin="0" BorderBrush="DeepPink" BorderThickness="5" Width="793.76" Height="1122.56">
+        <FixedPage x:Name="Page1" Width="793.76" Height="1122.56">
+
+            <!--Logotyp-->
+            <Canvas>
+                
+            </Canvas>
+
+            <!--Layout-->
+            <Canvas>
+                
+            </Canvas>
+            
+            <!--Ifyllnadsfält-->
+            <Canvas>
+                
+            </Canvas>
+
+        </FixedPage>
+    </Border>
     <Border Padding="0" Margin="0" BorderBrush="Gray" BorderThickness="1" Width="793.76" Height="1122.56">
-        <FixedPage Name="Page1" Width="793.76" Height="1122.56"  >
+        <FixedPage Name="Page2" Width="793.76" Height="1122.56"  >
 
             <!--Logotyp-->
             <Canvas>
@@ -61,18 +80,18 @@
                 <!--Logotyp-->
                 <Canvas>
                     <!--	KLISTRA IN LOGOTYPEN (från toolboxen) -->
-                    
+
                 </Canvas>
             </Canvas>
 
             <!--Layout-->
             <Canvas>
-                
+
             </Canvas>
 
             <!--Ifyllnadsfält-->
             <Canvas>
-                
+
             </Canvas>
 
         </FixedPage>

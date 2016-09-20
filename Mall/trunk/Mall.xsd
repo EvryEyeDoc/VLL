@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<schema xmlns:tns="https://www.eyedoc.se/schemas/form/template_blankett" targetNamespace="https://www.eyedoc.se/schemas/form/template_blankett" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
-  <!--*****    EyeDoc DataTyper v1.2.0 - 2010-11-01 EB     *****-->
+<schema xmlns:tns="https://www.eyedoc.se/schemas/form/mall" targetNamespace="https://www.eyedoc.se/schemas/form/mall" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
   <simpleType name="guid">
     <annotation>
       <documentation>Guid - Globally Unique Identifier (128 bit)</documentation>
@@ -84,7 +83,7 @@
   </complexType>
   <complexType name="BooleanValue">
     <sequence>
-      <element minOccurs="1" maxOccurs="1" name="value" type="boolean" default="0" />
+      <element minOccurs="1" maxOccurs="1" default="0" name="value" type="boolean" />
     </sequence>
     <attribute name="typ" type="tns:enum_ListValues" />
     <attribute name="__Id" type="tns:guid" />
@@ -121,8 +120,7 @@
     <annotation>
       <documentation>Generic String field with unbounded length.</documentation>
     </annotation>
-    <restriction base="string">
-    </restriction>
+    <restriction base="string" />
   </simpleType>
   <!--*****     Formlist     *****-->
   <complexType name="FormList">
@@ -187,7 +185,7 @@
       <element minOccurs="0" maxOccurs="1" name="etnicitetED1" type="tns:EtnicitetED1" />
       <element minOccurs="0" maxOccurs="1" name="avlidenED1" type="tns:AvlidenED1" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" /> 
+    <attribute name="__Id" type="tns:guid" />
   </complexType>
   <complexType name="EtnicitetED1">
     <sequence>
@@ -240,6 +238,10 @@
           <documentation>Standardvärde (default)</documentation>
         </annotation>
       </enumeration>
+      <enumeration value="Foralder1"/>
+      <enumeration value="Foralder2"/>
+      <enumeration value="Barn1"/>
+      <enumeration value="Barn2"/>
     </restriction>
   </simpleType>
   <complexType name="TolkbehovED1">
@@ -273,14 +275,14 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="orsak" type="tns:StringUnbounded" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
   </complexType>
   <!--*****     Sjukvårdsenhet     *****-->
   <complexType name="EnheterED1">
     <sequence>
       <element minOccurs="0" maxOccurs="unbounded" name="enhetED1" type="tns:EnhetED1" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
   </complexType>
   <complexType name="EnhetED1">
     <sequence>
@@ -330,6 +332,7 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="signatur" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="specialitet" type="tns:String50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="adressED1" type="tns:AdressED1" />
     </sequence>
     <attribute name="__Id" type="tns:guid" />
     <attribute name="typ" type="tns:enum_PersonalTyp" />
@@ -371,6 +374,11 @@
       <enumeration value="Sekreterare">
         <annotation>
           <documentation>Sekreterare</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Inloggad">
+        <annotation>
+          <documentation>I systemet inloggad användare</documentation>
         </annotation>
       </enumeration>
     </restriction>
@@ -421,6 +429,41 @@
     <!--Klass 2 - Fast -->
     <restriction base="string">
       <maxLength value="50" />
+      <enumeration value="HSAID">
+        <annotation>
+          <documentation>HSA-ID</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Arbetsplatskod">
+        <annotation>
+          <documentation>Arbetsplatskod</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Forskrivarkod">
+        <annotation>
+          <documentation>Förskrivarkod</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="ForskrivarkodArbetsplatskod">
+        <annotation>
+          <documentation>Forskrivarkod och Arbetsplatskod</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Gatuadress">
+        <annotation>
+          <documentation>Gatuadress</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Postnummer">
+        <annotation>
+          <documentation>Postnummer</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Postort">
+        <annotation>
+          <documentation>Postort</documentation>
+        </annotation>
+      </enumeration>
       <enumeration value="BNM">
         <annotation>
           <documentation>Båtnamn</documentation>
@@ -481,7 +524,7 @@
           <documentation>Hemsida</documentation>
         </annotation>
       </enumeration>
-      <enumeration value="EPO">
+      <enumeration value="Epost">
         <annotation>
           <documentation>E-post</documentation>
         </annotation>
@@ -502,6 +545,16 @@
     <!--Klass 2 - Fast -->
     <restriction base="string">
       <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standard - default</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Identitet">
+        <annotation>
+          <documentation>Uppgifter om personens identitet</documentation>
+        </annotation>
+      </enumeration>
       <enumeration value="BIR">
         <annotation>
           <documentation>Födelseplats</documentation>
@@ -541,6 +594,11 @@
     <!--Klass 2 - Fast -->
     <restriction base="string">
       <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standard - default</documentation>
+        </annotation>
+      </enumeration>
       <enumeration value="Hem">
         <annotation>
           <documentation>Hemtelefon</documentation>
@@ -620,6 +678,11 @@
     <!--Klass 3 - Standard -->
     <restriction base="string">
       <maxLength value="50" />
+      <enumeration value="Standard">
+        <annotation>
+          <documentation>Standard - default</documentation>
+        </annotation>
+      </enumeration>
       <enumeration value="Primar">
         <annotation>
           <documentation>Primärdiagnos</documentation>
@@ -773,6 +836,11 @@
       <enumeration value="EV10">
         <annotation>
           <documentation>Tillfälle 10</documentation>
+        </annotation>
+      </enumeration>
+      <enumeration value="Sjukdomsforlopp">
+        <annotation>
+          <documentation>Sjukdomsförlopp</documentation>
         </annotation>
       </enumeration>
     </restriction>
@@ -1030,7 +1098,8 @@
           <documentation>Intag</documentation>
         </annotation>
       </enumeration>
-      <enumeration value="Biverkning"><!--Användas när läkemedel orsakat en biverkning-->
+      <enumeration value="Biverkning">
+        <!--Användas när läkemedel orsakat en biverkning-->
         <annotation>
           <documentation>Biverkning</documentation>
         </annotation>
@@ -1054,12 +1123,12 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
       <!--(För att det ska kunna finnas flera former för varje läkemedel, t.ex. både spruta & tablett)-->
-      <element minOccurs="0" maxOccurs="unbounded" name="preparatformED1" type="tns:PreparatFormED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="preparatformED1" type="tns:PreparatFormED1"/>
       <!--Biverkning-->
-      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1" />
-      <element minOccurs="0" maxOccurs="unbounded" name="doseringED1" type="tns:DoseringED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1"/>
+      <element minOccurs="0" maxOccurs="unbounded" name="doseringED1" type="tns:DoseringED1"/>
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_PreparatNamn" />
   </complexType>
   <simpleType name="enum_PreparatNamn">
@@ -1095,7 +1164,7 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_PreparatFormTyp" />
   </complexType>
   <simpleType name="enum_PreparatFormTyp">
@@ -1161,7 +1230,7 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_DoseringsTyp" />
   </complexType>
   <simpleType name="enum_DoseringsTyp">
@@ -1220,7 +1289,7 @@
     <sequence>
       <element minOccurs="0" maxOccurs="unbounded" name="kontakteventED1" type="tns:KontaktEventED1" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
   </complexType>
   <complexType name="KontaktEventED1">
     <sequence>
@@ -1231,13 +1300,13 @@
       <element minOccurs="0" maxOccurs="unbounded" name="behandlingED1" type="tns:BehandlingED1" />
       <element minOccurs="0" maxOccurs="unbounded" name="administrationED1" type="tns:AdministrationED1" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="event" type="tns:enum_EventList" />
   </complexType>
   <complexType name="BehandlingED1">
     <sequence>
       <!--använd sjukvenh/sjukvpers för avsändar/mottagar info-->
-      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="biverkningED1" type="tns:BiverkningED1"/>
       <element minOccurs="1" maxOccurs="1" name="resultat" type="tns:StringUnbounded" />
       <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
@@ -1248,9 +1317,9 @@
       <!--status = Ej påbörjad/Inställd/Pågående/Avbruten/Avslutad - Enligt V-TIM-->
       <element minOccurs="1" maxOccurs="1" name="status" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="prio" type="tns:String50" />
-      <element minOccurs="0" maxOccurs="unbounded" name="behandlingsdataED1" type="tns:BehandlingsDataED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="behandlingsdataED1" type="tns:BehandlingsDataED1"/>
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_BehandlingsTyp" />
   </complexType>
   <simpleType name="enum_BehandlingsTyp">
@@ -1276,7 +1345,7 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_BehandlingsDataTyp" />
   </complexType>
   <simpleType name="enum_BehandlingsDataTyp">
@@ -1290,7 +1359,8 @@
       </enumeration>
     </restriction>
   </simpleType>
-  <complexType name="BiverkningED1"><!--SKA DETTA TILL LÄKEMEDEL?-->
+  <complexType name="BiverkningED1">
+    <!--SKA DETTA TILL LÄKEMEDEL?-->
     <sequence>
       <!--Använd diagnos för diagnos och grundsjukdom!-->
       <element minOccurs="1" maxOccurs="1" name="aktuellt" type="tns:String50" />
@@ -1304,7 +1374,7 @@
       <!--Upphör reaktionen vid utsättning-->
       <element minOccurs="1" maxOccurs="1" name="utsattning" type="tns:String50" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
   </complexType>
   <complexType name="UndersokningED1">
     <sequence>
@@ -1321,7 +1391,7 @@
       <!--Ej påbörjad/Inställd/Pågående/Avbruten/Avslutad - Enligt V-TIM-->
       <element minOccurs="1" maxOccurs="1" name="prio" type="tns:String50" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_UndersokningsTyp" />
   </complexType>
   <simpleType name="enum_UndersokningsTyp">
@@ -1454,7 +1524,7 @@
       <element minOccurs="1" maxOccurs="1" name="titel" type="tns:String50" />
       <element minOccurs="1" maxOccurs="1" name="beskrivning" type="tns:StringUnbounded" />
     </sequence>
-    <attribute name="__Id" type="tns:guid" />
+    <attribute name="__Id" type="tns:guid"/>
     <attribute name="typ" type="tns:enum_AdministrationsTyp" />
   </complexType>
   <simpleType name="enum_AdministrationsTyp">
@@ -1468,234 +1538,315 @@
       </enumeration>
     </restriction>
   </simpleType>
-  <!--*****     Signering     *****-->
-  <complexType name="SigneringarED1"> <!--Används för tillfället inte-->
+  <!--*****     TempValueList     *****-->
+  <complexType name="TempValueList">
     <sequence>
-      <element minOccurs="0" maxOccurs="unbounded" name="signeringED1" type="tns:SigneringED1" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueBoolean" type="tns:TempValueBoolean" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueDate" type="tns:TempValueDate" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueDateTime" type="tns:TempValueDateTime" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueDouble" type="tns:TempValueDouble" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueInt" type="tns:TempValueInt" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueString100" type="tns:TempValueString100" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueString1000" type="tns:TempValueString1000" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueString250" type="tns:TempValueString250" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueString50" type="tns:TempValueString50" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueString500" type="tns:TempValueString500" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueStringMax" type="tns:TempValueStringMax" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TempValueTime" type="tns:TempValueTime" />
     </sequence>
     <attribute name="__Id" type="tns:guid" />
-    <!--<attribute name="typ" type="tns:enum_UndersokningsTyp" />-->
   </complexType>
-  <complexType name="SigneringED1">
-    <sequence>
-      <!--Värden: Sign/Avvikelse/Historik/Avsignerat(null)/-->
-      <element minOccurs="1" maxOccurs="1" name="varde" type="tns:String50" />
-    </sequence>
-    <attribute name="__Id" type="tns:guid" />
-    <attribute name="typ" type="tns:enum_SigneringsTyp" />
-  </complexType>
-  <simpleType name="enum_SigneringsTyp">
-    <!--Klass 5 - Odefinierad -->
+  <simpleType name="enum_TempValueList">
     <restriction base="string">
       <maxLength value="50" />
-      <enumeration value="xxx">
-        <annotation>
-          <documentation>xxx</documentation>
-        </annotation>
-      </enumeration>
+      <enumeration value="Group1"/>
+      <enumeration value="Group2"/>
+      <enumeration value="Group3"/>
+      <enumeration value="Group4"/>
+      <enumeration value="Group5"/>
+      <enumeration value="Group6"/>
+      <enumeration value="Group7"/>
+      <enumeration value="Group8"/>
+      <enumeration value="Group9"/>
+      <enumeration value="Group10"/>
     </restriction>
   </simpleType>
-  <!--*****     Check     *****-->
-  <complexType name="UserCheck">
-    <annotation>
-      <documentation>Holds user information of the check. Add this XPath to checkitem@checkpath in XAML, XmlDataProvider checkData</documentation>
-    </annotation>
+  <complexType name="TempValueString50">
     <sequence>
-      <element name="checked" type="boolean" default="false">
-        <annotation>
-          <documentation>Set to true, on change.</documentation>
-        </annotation>
-      </element>
-      <element name="username" type="tns:String250" />
-      <element name="usercode" type="tns:enum_UserCode" />
-      <element name="timestamp" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="tns:String50" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="tns:String50" />
     </sequence>
     <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
   </complexType>
-  <simpleType name="enum_UserCode">
-    <!-- SFS 1998:531 -->
-    <restriction base="string">
-      <maxLength value="5" />
-      <enumeration value="AP">
-        <annotation>
-          <documentation>Apotekare</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="AT">
-        <annotation>
-          <documentation>Arbetsterapeut</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="AU">
-        <annotation>
-          <documentation>Audionom</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="BA">
-        <annotation>
-          <documentation>Barnmorska</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="BM">
-        <annotation>
-          <documentation>Biomedicinsk analytiker</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="DT">
-        <annotation>
-          <documentation>Dietist</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="KP">
-        <annotation>
-          <documentation>Kiropraktor</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="LG">
-        <annotation>
-          <documentation>Logoped</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="LK">
-        <annotation>
-          <documentation>Läkare</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="NA">
-        <annotation>
-          <documentation>Naprapat</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="OP">
-        <annotation>
-          <documentation>Optiker</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="OT">
-        <annotation>
-          <documentation>Ortopedingenjör</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="PS">
-        <annotation>
-          <documentation>Psykolog</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="PT">
-        <annotation>
-          <documentation>Psykoterapeut</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="RC">
-        <annotation>
-          <documentation>Receptarie</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="RS">
-        <annotation>
-          <documentation>Röntgensjuksköterska</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="SG">
-        <annotation>
-          <documentation>Sjukgymnast</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="SF">
-        <annotation>
-          <documentation>Sjukhusfysiker</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="SJ">
-        <annotation>
-          <documentation>Sjuksköterska</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="TH">
-        <annotation>
-          <documentation>Tandhygienist</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="TL">
-        <annotation>
-          <documentation>Tandläkare</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Sekr">
-        <annotation>
-          <documentation>Sekr</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Läk">
-        <annotation>
-          <documentation>Läk</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Ssk">
-        <annotation>
-          <documentation>Ssk</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Arbt">
-        <annotation>
-          <documentation>Arbt</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Sjg">
-        <annotation>
-          <documentation>Sjg</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Kur">
-        <annotation>
-          <documentation>Kur</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Log">
-        <annotation>
-          <documentation>Log</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Psyk">
-        <annotation>
-          <documentation>Psyk</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Diet">
-        <annotation>
-          <documentation>Diet</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="Usk">
-        <annotation>
-          <documentation>Usk</documentation>
-        </annotation>
-      </enumeration>
-      <enumeration value="*">
-        <annotation>
-          <documentation>Any</documentation>
-        </annotation>
-      </enumeration>
-    </restriction>
-  </simpleType>
-  <complexType name="SubCheck">
-    <annotation>
-      <documentation>Holds a specific check</documentation>
-    </annotation>
+  <complexType name="TempValueString100">
     <sequence>
-      <element name="usercheck" type="tns:UserCheck" minOccurs="1" maxOccurs="1" />
-      <element minOccurs="0" maxOccurs="1" name="signeringED1" type="tns:SigneringED1" />
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="tns:String100" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="tns:String100" />
     </sequence>
     <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
   </complexType>
-  <complexType name="Check">
-    <annotation>
-      <documentation>Holds a number of check's</documentation>
-    </annotation>
+  <complexType name="TempValueString250">
     <sequence>
-      <element name="subcheck" type="tns:SubCheck" minOccurs="1" maxOccurs="unbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="tns:String250" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="tns:String250" />
     </sequence>
     <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueString500">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="tns:String500" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="tns:String500" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueString1000">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:String1000" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:String1000" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:String1000" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:String1000" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:String1000" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueStringMax">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="tns:StringUnbounded" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="tns:StringUnbounded" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueInt">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="int" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueDouble">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="double" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="double" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueBoolean">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="boolean" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="boolean" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueDate">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="date" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="date" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueTime">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="time" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="time" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
+  </complexType>
+  <complexType name="TempValueDateTime">
+    <sequence>
+      <element minOccurs="1" maxOccurs="1" name="Value1" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value2" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value3" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value4" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value5" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value6" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value7" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value8" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value9" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value10" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value11" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value12" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value13" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value14" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value15" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value16" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value17" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value18" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value19" type="dateTime" />
+      <element minOccurs="1" maxOccurs="1" name="Value20" type="dateTime" />
+    </sequence>
+    <attribute name="__Id" type="tns:guid" />
+    <attribute name="typ" type="tns:enum_TempValueList" />
   </complexType>
   <!--*****     Blankett     *****-->
   <complexType name="Blankett">
@@ -1706,6 +1857,7 @@
       <element minOccurs="1" maxOccurs="1" name="diagnosED1" type="tns:DiagnosED1" />
       <element minOccurs="1" maxOccurs="1" name="lakemedelED1" type="tns:LakemedelED1" />
       <element minOccurs="1" maxOccurs="1" name="kontaktED1" type="tns:KontaktED1" />
+      <element minOccurs="1" maxOccurs="1" name="TempValueList" type="tns:TempValueList" />
     </sequence>
     <attribute name="__mainId" type="tns:guid" />
     <attribute name="__form" type="int" />

@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <blankett xmlns="https://www.eyedoc.se/schemas/form/template_blankett">
-  <!--*****    EyeDoc DataTyper v1.0.1 - 2010-07-20 EB     *****-->
   <patientED1>
-    <personnr />
+    <personnr>19121212-1212</personnr>
     <namn>
       <fnamn />
       <mnamn />
