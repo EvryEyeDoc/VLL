@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eyedoc version="1.0">
+  <transform>
+    <global>
+      <source>
+        <xpath type="root">blankett</xpath>
+      </source>
+      <target>
+        <xpath type="root">blankett</xpath>
+      </target>
+    </global>
+    <rows>
+      <row>
+        <source>
+          <item action="replace" type="xpath">diagnosED1/deldiagnosED1[@typ='Standard']/beskrivning</item>
+        </source>
+        <target>
+          <item action="replace" type="xpath">diagnosED1/deldiagnosED1[@typ='Standard']/beskrivning</item>
+        </target>
+      </row>
+    </rows>
+  </transform>
+</eyedoc>

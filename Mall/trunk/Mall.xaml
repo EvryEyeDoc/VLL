@@ -106,7 +106,21 @@
             </Canvas>
             <!--Layout-->
             <Canvas>
-
+                <Expander>
+                    <Expander.Style>
+                        <Style TargetType="Expander">
+                            <Setter Property="IsExpanded" Value="False"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=CheckBox, Path=IsChecked}" Value="True">
+                                    <Setter Property="IsExpanded" Value="True"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Expander.Style>
+                    <StackPanel>
+                        <CheckBox x:Name="CheckBox" IsChecked="True"/>
+                    </StackPanel>
+                </Expander>
             </Canvas>
             <!-- Roterad text -->
             <Canvas>
